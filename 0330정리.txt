@@ -1,0 +1,19 @@
+public Product()
+{
+}
+생성자 기본 모습 
+생성자 = 클래스의 기본 뼈대를 잡는 것
+생성자 쓰는 이유 > 294p 예제로 확인
+속성 정확히?
+
+
+참조변수는 주소를 복사한다
+
+Test testA = new Test();
+Test testB = testA;
+testA.value = 10;
+testB.value = 20;
+Console.WriteLine(testA.value);
+
+출력결과
+20(주소가 같으므로)
