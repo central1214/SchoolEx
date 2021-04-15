@@ -1,0 +1,65 @@
+import random
+class champion : 
+    HP = 700
+    DM = 100
+
+    def __init__(self,name) :
+        self.name = name
+    def damage1(self) :
+        print("400의 데미지를 입혔다!")
+        self.HP -= 400
+    def damage2(self) :
+        print('200의 데미지를 입혔다!')
+        self.HP -= 200
+    def damage3(self) :
+        print('133의 데미지를 입혔다!')
+        self.HP -= 133
+champ = [0,1]
+a = input('Player1의 이름 입력')
+b = input('Player2의 이름 입력')
+champ[0] = champion(a)
+champ[1] = champion(b)
+print(champ[1].name)
+
+while champ[0].HP >= 0 and champ[1].HP >= 0 :
+    for x in range(2) :
+        attack = input(champ[x].name+'의 턴!\n[1. 성공확률 25%][2. 성공확률 50%][3. 성공확률 75%]')
+        if attack == '1' :
+            rand = random.randrange(1,5)
+            if rand > 3 :
+                print('효과는 굉장했다!!!')
+                print(champ[x].name+'이(가) ',end='')
+                champ[x].damage1()
+                print('\n'+a+'의 현재 체력 : '+str(champ[0].HP))
+                print(b+'의 현재 체력 : '+str(champ[1].HP))
+                if champ[x].HP <= 0 :
+                    break
+            else :
+                print('공격 실패!')
+        elif attack == '2' :
+            rand = random.randrange(1,5)
+            if rand > 2 :
+                print(champ[x].name+'이(가) ',end='')
+                champ[x].damage2()
+                print('\n'+a+'의 현재 체력 : '+str(champ[0].HP))
+                print(b+'의 현재 체력 : '+str(champ[1].HP))
+                if champ[x].HP <= 0 :
+                    break
+            else :
+                print('공격 실패!')
+        elif attack == '3' :
+            rand = random.randrange(1,5)
+            if rand > 1 :
+                print(champ[x].name+'이(가) ',end='')
+                champ[x].damage3()
+                print('\n'+a+'의 현재 체력 : '+str(champ[0].HP))
+                print(b+'의 현재 체력 : '+str(champ[1].HP))
+                if champ[x].HP <= 0 :
+                    break
+            else :
+                print('공격 실패!')
+else :
+    if champ[0].HP > 0 :
+        print(a+'승리!!')
+    else :
+        print(b + '승리!!')
