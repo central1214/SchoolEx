@@ -1,0 +1,47 @@
+class Car :
+    def exclaim(self) :
+        print("I'm a Car!")
+class Yugo(Car) :
+    def singing(self) :
+        print('lalalal~')
+class Ya(Yugo) :
+    pass
+
+givC = Car()
+givY = Yugo()
+
+givC.exclaim()
+givY.exclaim()
+yaya = Ya()
+yaya.exclaim()
+issubclass(Yugo, Car)
+givY.singing()
+class champ :
+    def __init__(self,name) :
+        self.name = name
+class bott(champ) :
+    def __init__(self,name) :
+        self.name = 'Bottom Position : '+name
+champ = champ('ezreal')
+print(champ.name)
+champ1 = bott('vayne')
+print(champ1.name)
+class Character :
+    def __init__(self,name,age,skill) :
+        self.name = name
+        self.age = age
+        self.skill = skill
+    def getItem(self) :
+        print('아이템을 얻었습니다')
+    def sellItem(self) :
+        print('아이템을 팔았습니다')
+class gameCharacter(Character) :
+    def getItem(self) :
+        super().getItem()
+    def sellItem(self) :
+        super().getItem()
+    def changeItem(self) :
+        print('아이템을 변경했습니다')
+ez = gameCharacter('ez',10,'vision')
+ez.getItem()
+ez.changeItem()
